@@ -21,4 +21,4 @@ Route::namespace('Api')->group(function () {
     Route::resource('transaction', 'TransactionController');
     Route::resource('investment', 'InvestmentController');
     Route::resource('dailyRoi', 'ROIController');
-}
+})
