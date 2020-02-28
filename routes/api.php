@@ -13,14 +13,12 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
-Route::post('/register', 'Api\AuthController@register');
-Route::post('/login', 'Api\AuthController@login');
-Route::resource('package', 'Api\PackageController');
-Route::resource('payment', 'Api\PaymentController');
-Route::resource('transaction', 'Api\TransactionController');
-Route::resource('investment', 'Api\InvestmentController');
-Route::resource('dailyRoi', 'Api\ROIController');
+Route::namespace('Api')->group(function () {
+    Route::post('/register', 'Api\AuthController@register');
+    Route::post('/login', 'Api\AuthController@login');
+    Route::resource('package', 'Api\PackageController');
+    Route::resource('payment', 'Api\PaymentController');
+    Route::resource('transaction', 'Api\TransactionController');
+    Route::resource('investment', 'Api\InvestmentController');
+    Route::resource('dailyRoi', 'Api\ROIController');
+}
