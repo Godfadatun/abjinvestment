@@ -14,11 +14,11 @@ use Illuminate\Http\Request;
 */
 
 Route::namespace('Api')->group(function () {
-    Route::post('/register', 'Api\AuthController@register');
-    Route::post('/login', 'Api\AuthController@login');
-    Route::resource('package', 'Api\PackageController');
-    Route::resource('payment', 'Api\PaymentController');
-    Route::resource('transaction', 'Api\TransactionController');
-    Route::resource('investment', 'Api\InvestmentController');
-    Route::resource('dailyRoi', 'Api\ROIController');
+    Route::post('/register', 'AuthController@register');
+    Route::post('/login', 'AuthController@login');
+    Route::resource('package', 'PackageController');
+    Route::resource('payment', 'PaymentController');
+    Route::resource('transaction', 'TransactionController');
+    Route::resource('investment', 'InvestmentController');
+    Route::resource('dailyRoi', 'ROIController');
 }
